@@ -16,6 +16,7 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Edit</th>
+            <th>Delete</th>
         </tr>
 
         @foreach ($users as $user)
@@ -24,7 +25,12 @@
             <td>{{$user['name']}}</td>
             <td>{{$user['email']}}</td>
             <td>{{$user['phone']}}</td>
-            <td><button>Edit</button></td>
+            <td>
+                <a href={{"edit/".$user['id']}}>Edit</a>
+            </td>
+            <td>
+                <a href={{"delete/".$user['id']}}>Delete</a>
+            </td>
         </tr>
         @endforeach
         

@@ -42,7 +42,7 @@ class UserController extends Controller
         $user->email= $request->input('email');
         $user->phone = $request->input('phone');
         $user->save();
-        return redirect()->back()->with('status','User added Successfully');
+        return redirect("/list-users")->with('status','User added Successfully');
 
 
     }
@@ -66,7 +66,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data=User::find($id);
+        return view('editUser',['data'=>$data]);
     }
 
     /**
@@ -76,9 +77,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user = User::find($request->id);
+        $user->name = $request->name;
+        $user->email= $request->email;
+        $user->phone = $request->phone;
+        $user->save();
+        return redirect('list-users');
     }
 
     /**
@@ -89,6 +95,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data=User::find($id);
+        $data->delete();
+        return redirect('list-users');
     }
 }

@@ -15,11 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('users');
 });
+
+// Route::get('/list-users', function () {
+//     return view('viewusers');
+// });
 
 
 Route::get('list-users', [UserController::class,'index']);
 Route::get('store-form', [UserController::class,'create']);
 Route::post('store-form',[UserController::class,'store']);
-// Route::get('user-list',[UserController::class,'show']);
+Route::get('delete/{id}', [UserController::class,'destroy']);
+Route::get('edit/{id}', [UserController::class,'edit']);
+Route::post('edit', [UserController::class,'update']);
+

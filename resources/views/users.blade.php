@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-<form  class="form-control w-50" method="POST" action="{{ url('store-form') }}">+
+<form  class="form-control w-50" method="POST" action="{{ url('store-form') }}">
             @csrf
             <h1 class="form-group">User Details</h1>
             <hr>
@@ -27,14 +27,16 @@
                     <label for="phone">Phone</label>
                     <input type="tele" class="form-control" id="phone" placeholder="Phone" name="phone" required>
                 </div>
+               <div style="display: flex; justify-content:space-between">
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
-                    <!-- <a href="#" style="margin-left: 10%">Reset Password</a> -->
                 </div>
 
-                <!-- <div class="form-group">
-                    <p>Don't Have an account yet!: <br><a href="register.html">Register</a></p>
-                </div> -->
+                <div class="form-group">
+                    <a href="/list-users" class="btn btn-primary" name="view">View all users</a>
+                </div>
+               </div>
+
             </div>
             
       </form>
