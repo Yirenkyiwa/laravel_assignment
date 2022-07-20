@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <form  class="form-control w-50" method="POST" action="/edit">
+    <form  style="margin:50px auto" class="form-control w-50" method="POST" action="/edit">
         @csrf
         <h1 class="form-group">Update User Details</h1>
         <hr>
@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="tele" class="form-control" id="phone" placeholder="Phone" name="phone" value="{{$data['phone']}}" required>
+                <input type="tele" class="form-control mb-2" id="phone" placeholder="Phone" name="phone" value="{{$data['phone']}}" required>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary" name="submit">Save Changes</button>
